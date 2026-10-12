@@ -1,21 +1,26 @@
-# Volmer：K⁺ 配位水分子解离
+# Volmer: K⁺-coordinated water dissociation
 
-## 来源与改编
+## Source and adaptation
 
-本例改编自 Xueping Qin、Tejs Vegge 和 Heine Anton Hansen 的
-[*Cation-Coordinated Inner-Sphere CO2 Electroreduction at Au–Water Interfaces*](https://doi.org/10.1021/jacs.2c11643)，
-J. Am. Chem. Soc. **145**, 1897–1905 (2023)。
-结构与反应路径来自其 [Zenodo 开放数据](https://doi.org/10.5281/zenodo.7474433)，
-`SG_HER.zip` 中的 `SG_HER/Volmer/K_coordinated_H2O`。
+This example is adapted from the work of Xueping Qin, Tejs Vegge, and Heine Anton Hansen:
+[*Cation-Coordinated Inner-Sphere CO2 Electroreduction at Au–Water Interfaces*](https://doi.org/10.1021/jacs.2c11643),
+J. Am. Chem. Soc. **145**, 1897–1905 (2023).
+The structure and reaction path come from the authors' [open Zenodo dataset](https://doi.org/10.5281/zenodo.7474433),
+specifically `SG_HER/Volmer/K_coordinated_H2O` in `SG_HER.zip`.
 
-结构数据沿用原数据的 [CC BY 4.0 许可](https://creativecommons.org/licenses/by/4.0/)，
-归属上述数据作者；本仓库的代码许可证不替代数据的原许可。
-**POTCAR、VASP 程序、运行结果和原服务器专用脚本不随本例分发。**
+The structure data retain the original [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/)
+and are attributed to the authors listed above. The repository's code license does not replace the original data license.
+**POTCAR, VASP executables, simulation results, and scripts specific to the original server are not distributed with this example.**
 
-## 反应坐标与设置
+## Reaction coordinate and settings
 
-反应坐标为 $\xi=d(\mathrm O,\mathrm H)-d(\mathrm H,\mathrm{Au})$。
-i-PI 的 0-based 编号为 O=119、H=68、Au=134，对应：
+The collective variable (CV) is the reaction coordinate, defined as the difference between the O–H and H–Au distances:
+
+$$
+\xi=d(\mathrm{O},\mathrm{H})-d(\mathrm{H},\mathrm{Au})
+$$
+
+The i-PI 0-based atom indices are O=119, H=68, and Au=134, giving:
 
 ```xml
 <distance>
@@ -26,17 +31,17 @@ i-PI 的 0-based 编号为 O=119、H=68、Au=134，对应：
 </distance>
 ```
 
-| 参数 | 本例设置 |
+| Parameter | Setting in this example |
 | --- | --- |
-| 温度与系综 | 298 K，NVT |
-| 算法、时间步 | SHAKE，1 fs |
-| SVR 时间常数 | 200 fs |
-| CV 容差 | 1e−6 Å |
-| 扫描增量、总步数 | +0.001 Å/步，2000 步 |
-| 最后一帧目标 | 0.7576384407596719 Å |
-| 结构、固定原子 | 173 原子；固定 24 个 Au，编号见 input.xml |
-| VASP 力设置 | ENCUT=400 eV，IVDW=11，ALGO=V，Γ-only 1×1×1 |
+| Temperature and ensemble | 298 K, NVT |
+| Algorithm and timestep | SHAKE, 1 fs |
+| SVR time constant | 200 fs |
+| CV tolerance | 1e−6 Å |
+| Scan increment and total steps | +0.001 Å/step, 2000 steps |
+| Final-frame target | 0.7576384407596719 Å |
+| Structure and fixed atoms | 173 atoms; 24 fixed Au atoms, with indices listed in input.xml |
+| VASP force settings | ENCUT=400 eV, IVDW=11, ALGO=V, Γ-only 1×1×1 |
 
-## 运行
+## Running the example
 
-参考sbatch.slurm文件。
+See `sbatch.slurm` for the submission script used to run this example.
