@@ -1,0 +1,73 @@
+<simulation verbosity="medium">
+  <output prefix="volmer">
+    <properties stride="1" filename="out">
+      [ step,
+        time{femtosecond},
+        temperature{kelvin},
+        potential{electronvolt},
+        conserved{electronvolt},
+        slow_growth_cv{angstrom},
+        slow_growth_target{angstrom},
+        slow_growth_error{angstrom},
+        slow_growth_lambda{ev/ang},
+        slow_growth_shake_lambda{ev/ang},
+        slow_growth_velocity_lambda{ev/ang},
+        slow_growth_gradient{ev/ang},
+        slow_growth_metric_z,
+        slow_growth_metric,
+        slow_growth_gkt{ev/ang},
+        slow_growth_weighted_gradient,
+        slow_growth_work{electronvolt},
+        slow_growth_iterations,
+        slow_growth_velocity_error{m/s},
+        slow_growth_completed_steps ]
+    </properties>
+    <trajectory stride="1" filename="pos" cell_units="angstrom" format="xyz">positions{angstrom}</trajectory>
+    <checkpoint stride="10" overwrite="true" filename="restart"/>
+  </output>
+
+  <total_steps>2000</total_steps>
+
+  <ffsocket name='vasp' mode='inet' pbc='True'>
+    <address>localhost</address>
+    <port>23004</port>
+     <slots>1 </slots>
+    <latency>0.01</latency>
+    <timeout>5000</timeout>
+  </ffsocket>
+  <system>
+    <initialize nbeads="1">
+      <file mode="ase" units="angstrom" cell_units="angstrom">POSCAR</file>
+      <velocities mode="thermal" units="kelvin">298</velocities>
+    </initialize>
+
+    <forces>
+      <force forcefield="vasp"/>
+    </forces>
+
+    <motion mode="slow_growth">
+      <fixcom>false</fixcom>
+      <fixatoms>[131, 132, 135, 137, 138, 139, 142, 144, 145, 146, 149, 151, 152, 153, 156, 158, 159, 160, 163, 165, 166, 167, 170, 172]</fixatoms>
+      <slow_growth mode="nvt" algorithm="shake">
+        <timestep units="femtosecond">1.0</timestep>
+        <thermostat mode="svr">
+          <tau units="femtosecond">200.0</tau>
+        </thermostat>
+        <distance>
+          <atoms>[119, 68, 68, 134]</atoms>
+          <coefficients>[1.0, -1.0]</coefficients>
+          <start units="angstrom">-1.2413615592403282</start>
+          <increment units="angstrom">0.001</increment>
+        </distance>
+        <shake>
+          <tolerance units="angstrom">1.0e-6</tolerance>
+          <max_iterations>1000</max_iterations>
+        </shake>
+      </slow_growth>
+    </motion>
+
+    <ensemble>
+      <temperature units="kelvin">298</temperature>
+    </ensemble>
+  </system>
+</simulation>

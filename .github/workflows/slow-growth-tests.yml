@@ -1,0 +1,27 @@
+name: Slow-growth tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install the fork and test dependencies
+        run: python -m pip install -e ".[test]"
+      - name: Run slow-growth unit tests
+        run: python -m pytest -p no:cacheprovider ipi_tests/unit_tests/engine/test_slow_growth.py -q

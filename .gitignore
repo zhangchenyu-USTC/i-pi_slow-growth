@@ -1,0 +1,57 @@
+#ignored patterns
+
+bin/i-pi-driver
+doc/manual.pdf
+doc/manual.xml
+doc/latex/input_ref_idx.tex
+*.pyc
+*.pyo
+*.x
+*.mod
+*.out
+*.o
+*~
+\#*
+*.orig
+.coverage
+coverage*.xml
+regtest-ref
+/build
+/dist
+*.egg-info/
+
+# Python and test caches
+__pycache__/
+.pytest_cache/
+.tox/
+.venv/
+
+# Restricted VASP data and generated electronic files
+POTCAR*
+WAVECAR*
+CHGCAR*
+CHG
+
+# Generated outputs of the slow-growth example
+/examples/features/slow_growth/*/i-pi.log
+/examples/features/slow_growth/*/driver.log
+/examples/features/slow_growth/*/slow-growth*.out
+/examples/features/slow_growth/*/slow-growth*.restart*
+/examples/features/slow_growth/*/slow-growth*.xyz
+/examples/features/slow_growth/*/EXIT
+
+# Generated files from the public Volmer input example
+/examples/features/slow_growth/volmer/volmer.*
+/examples/features/slow_growth/volmer/vasp.log
+/examples/features/slow_growth/volmer/OUTCAR
+/examples/features/slow_growth/volmer/OSZICAR
+/examples/features/slow_growth/volmer/CONTCAR
+/examples/features/slow_growth/volmer/REPORT
+/examples/features/slow_growth/volmer/XDATCAR
+/examples/features/slow_growth/volmer/vasprun.xml
+
+# Local credentials and publication staging
+.env
+.env.*
+.netrc
+/github-release/

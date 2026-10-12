@@ -1,0 +1,20 @@
+# column   1     --> step : The current simulation time step.
+# column   2     --> time{picosecond} : The elapsed simulation time.
+# column   3     --> conserved : The value of the conserved energy quantity per bead.
+# column   4     --> potential : The physical system potential energy.
+# column   5     --> kinetic_cv(2) : The centroid-virial quantum kinetic energy of the physical system.
+# column   6     --> kinetic_cv(1) : The centroid-virial quantum kinetic energy of the physical system.
+# column   7     --> kinetic_td(2) : The primitive quantum kinetic energy of the physical system.
+# column   8     --> kinetic_td(1) : The primitive quantum kinetic energy of the physical system.
+# column   9     --> spring : The total spring potential energy between the beads of all the ring polymers in the system.
+    0.00000000e+00     0.00000000e+00     1.19661499e-03     1.19661499e-03     4.75022280e-04     4.75022280e-04     7.60035648e-03     7.60035648e-03     3.01550438e-32   
+    1.00000000e+00     5.00000000e-04     1.19909289e-03     1.26032979e-03     5.57223644e-04     5.45492077e-04     7.55849927e-03     7.55844022e-03     1.36799851e-04   
+    2.00000000e+00     1.00000000e-03     1.20692880e-03     1.47052246e-03     8.54412519e-04     7.53808522e-04     7.41571053e-03     7.42269742e-03     5.34570367e-04   
+    3.00000000e+00     1.50000000e-03     1.22076472e-03     1.89357914e-03     1.31862148e-03     9.71708794e-04     7.20417636e-03     7.31875608e-03     1.09984576e-03   
+    4.00000000e+00     2.00000000e-03     1.25514576e-03     2.76434471e-03     1.95462217e-03     1.43488394e-03     7.03589810e-03     7.04765012e-03     1.80009707e-03   
+    5.00000000e+00     2.50000000e-03     1.29455658e-03     3.63504049e-03     2.55975580e-03     1.56519336e-03     6.91467700e-03     6.79217773e-03     2.47126541e-03   
+    6.00000000e+00     3.00000000e-03     1.36222894e-03     4.79312978e-03     3.07974242e-03     1.88997969e-03     6.59396843e-03     6.38778509e-03     3.38973932e-03   
+    7.00000000e+00     3.50000000e-03     1.37710212e-03     4.95574386e-03     3.15128900e-03     1.69412882e-03     6.13485136e-03     5.84912092e-03     4.43379697e-03   
+    8.00000000e+00     4.00000000e-03     1.31806844e-03     4.09218731e-03     2.37422168e-03     1.29309047e-03     5.83635768e-03     5.04666641e-03     6.01534849e-03   
+    9.00000000e+00     4.50000000e-03     1.30334348e-03     4.00963675e-03     2.30199184e-03     1.17033079e-03     5.46509039e-03     4.42554588e-03     7.76826765e-03   
+    1.00000000e+01     5.00000000e-03     1.26646682e-03     3.48154309e-03     1.65881966e-03     1.45493020e-03     5.41396535e-03     4.06316462e-03     8.81440297e-03   

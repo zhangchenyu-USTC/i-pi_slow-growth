@@ -1,0 +1,17 @@
+# column   1     --> step : The current simulation time step.
+# column   2     --> conserved : The value of the conserved energy quantity per bead.
+# column   3     --> temperature{kelvin} : The current temperature, as obtained from the MD kinetic energy.
+# column   4     --> potential : The physical system potential energy.
+# column   5     --> kinetic_md : The kinetic energy of the (extended) classical system.
+# column   6     --> kinetic_cv : The centroid-virial quantum kinetic energy of the physical system.
+# column   7     --> spring : The total spring potential energy between the beads of all the ring polymers in the system.
+    0.00000000e+00     6.35780346e-03     2.23070360e+02     0.00000000e+00     6.35780346e-03     1.42506684e-03     0.00000000e+00   
+    1.00000000e+00     6.35780324e-03     2.26918368e+02    -6.33940929e-07     6.46747684e-03     1.42455236e-03     7.68919776e-06   
+    2.00000000e+00     6.35780286e-03     1.89660924e+02    -2.02020101e-06     5.40558986e-03     1.42351904e-03     2.11546420e-05   
+    3.00000000e+00     6.35780221e-03     2.37565767e+02    -4.30989795e-06     6.77094194e-03     1.42182863e-03     4.42078470e-05   
+    4.00000000e+00     6.35780096e-03     2.24919839e+02    -8.00246265e-06     6.41051609e-03     1.41892143e-03     8.78608903e-05   
+    5.00000000e+00     6.35779962e-03     1.79567767e+02    -1.22385527e-05     5.11792140e-03     1.41569381e-03     1.35186080e-04   
+    6.00000000e+00     6.35779787e-03     1.80815478e+02    -1.73929370e-05     5.15348284e-03     1.41170410e-03     1.96870519e-04   
+    7.00000000e+00     6.35779596e-03     2.22965601e+02    -2.34629994e-05     6.35481768e-03     1.40698561e-03     2.63532463e-04   
+    8.00000000e+00     6.35779368e-03     1.93903473e+02    -3.03641213e-05     5.52650819e-03     1.40163815e-03     3.41479714e-04   
+    9.00000000e+00     6.35779150e-03     2.73156582e+02    -3.74070912e-05     7.78532773e-03     1.39623869e-03     4.17942811e-04   
